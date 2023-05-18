@@ -140,7 +140,8 @@ int main() {
 			cout << "2. Hapus Data" << endl;
 			cout << "3. Tampilkan Data" << endl;
 			cout << "4. Cari Data" << endl;
-			cout << "5. Pilihan" << endl;
+			cout << "5. Keluar" << endl;
+			cout << "Pilihan:";
 			cin >> pilihan;
 			switch (pilihan)
 			{
@@ -152,7 +153,21 @@ int main() {
 				break;
 			case 2:
 				if (listEmpty())
+				{
+					cout << "List kosong" << endl;
+					system("pause");
+					system("cls");
+					break;
+				}
 
+				int nim;
+				cout << "Masukkan NIM: ";
+				cin >> nim;
+				if (deleteNode(nim)) {
+					cout << "nim: " << nim << "berhasil dihapus" << endl;
+					system("pause");
+					system("cls");
+				}
 			}
 		}
 	}
